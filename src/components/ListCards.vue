@@ -28,14 +28,20 @@ export default {
 <template>
   <div class="container">
     <div class="row">
-      <div class="col" v-for="card in cardsList" :key="card.id">
+      <!-- <div class="col" v-for="card in cardsList" :key="card.id">
         <div class="image">
           <img :src="card.card_images[0].image_url" alt="" />
         </div>
         <h4>{{ card.name }}</h4>
         <p>{{ card.archetype }}</p>
-      </div>
-      <CardsApp></CardsApp>
+      </div> -->
+      <CardsApp
+        v-for="card in cardsList"
+        :key="card.id"
+        :image_url="card.card_images[0].image_url"
+        :name="card.name"
+        :archetype="card.archetype"
+      ></CardsApp>
     </div>
   </div>
 </template>
