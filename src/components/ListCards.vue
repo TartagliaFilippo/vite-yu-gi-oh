@@ -1,24 +1,12 @@
 <script>
-import axios from "axios";
 import CardsApp from "./CardsApp.vue";
+import { store } from "../data/store";
 
 export default {
   data() {
     return {
-      cardsList: [],
+      store,
     };
-  },
-
-  methods: {
-    fetchCards() {
-      axios
-        .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
-        .then((response) => (this.cardsList = response.data.data));
-    },
-  },
-
-  created() {
-    this.fetchCards();
   },
 
   components: { CardsApp },
@@ -28,15 +16,8 @@ export default {
 <template>
   <div class="container">
     <div class="row">
-      <!-- <div class="col" v-for="card in cardsList" :key="card.id">
-        <div class="image">
-          <img :src="card.card_images[0].image_url" alt="" />
-        </div>
-        <h4>{{ card.name }}</h4>
-        <p>{{ card.archetype }}</p>
-      </div> -->
       <CardsApp
-        v-for="card in cardsList"
+        v-for="card in store.cardsList"
         :key="card.id"
         :image_url="card.card_images[0].image_url"
         :name="card.name"
