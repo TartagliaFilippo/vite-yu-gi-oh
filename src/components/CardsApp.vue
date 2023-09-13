@@ -21,11 +21,11 @@ export default {
 <style lang="scss" scoped>
 .col {
   width: 19%;
-  height: 210px;
+  height: 310px;
 
   .image {
     width: 100%;
-    height: 150px;
+    height: 220px;
 
     img {
       width: 100%;

@@ -36,30 +36,6 @@ export default {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    .col {
-      width: 19%;
-      height: 210px;
-
-      .image {
-        width: 100%;
-        height: 150px;
-
-        img {
-          width: 100%;
-          max-height: 100%;
-        }
-      }
-
-      h4 {
-        font-size: 10px;
-        text-align: center;
-      }
-
-      p {
-        font-size: 8px;
-        text-align: center;
-      }
-    }
   }
 }
 </style>
