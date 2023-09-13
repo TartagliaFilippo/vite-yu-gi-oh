@@ -10,7 +10,7 @@ import MainApp from "./components/MainApp.vue";
 export default {
   data() {
     return {
-      store,
+      urlApi: "https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0",
     };
   },
 
@@ -18,21 +18,29 @@ export default {
 
   methods: {
     fetchCards() {
-      axios
-        .get("https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0")
-        .then((response) => {
-          const cardsData = response.data.data.map((card) => {
-            const { id, card_images, name, archetype } = card;
-            return { id, card_images, name, archetype };
-          });
+      axios.get(this.urlApi).then((response) => {
+        const cardsData = response.data.data.map((card) => {
+          const { id, card_images, name, archetype } = card;
+          return { id, card_images, name, archetype };
+        });
 
-          store.cardsList = cardsData;
+        store.cardsList = cardsData;
+      });
+    },
+
+    fetchArchetype() {
+      axios
+        .get("https://db.ygoprodeck.com/api/v7/archetypes.php")
+        .then((response) => {
+          store.archetypes = response.data;
         });
     },
   },
 
   created() {
     this.fetchCards();
+
+    this.fetchArchetype();
   },
 };
 </script>

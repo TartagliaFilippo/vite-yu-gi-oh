@@ -1,5 +1,6 @@
 <script>
-import CardsApp from "./CardsApp.vue";
+import BaseSelect from "./ui/BaseSelect.vue";
+import CardsApp from "./card/CardsApp.vue";
 import { store } from "../data/store";
 
 export default {
@@ -9,12 +10,13 @@ export default {
     };
   },
 
-  components: { CardsApp },
+  components: { CardsApp, BaseSelect },
 };
 </script>
 
 <template>
   <div class="container">
+    <BaseSelect></BaseSelect>
     <div class="row">
       <CardsApp
         v-for="card in store.cardsList"

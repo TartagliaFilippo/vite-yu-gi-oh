@@ -7,7 +7,9 @@ export default {
 </script>
 
 <template>
-  <div class="wrapper"><ListCards></ListCards></div>
+  <div class="wrapper">
+    <ListCards></ListCards>
+  </div>
 </template>
 
 <style lang="scss" scoped>
