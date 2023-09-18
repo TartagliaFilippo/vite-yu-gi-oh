@@ -21,11 +21,11 @@ export default {
 <style lang="scss" scoped>
 .col {
   width: 19%;
-  height: 310px;
+  height: 360px;
 
   .image {
     width: 100%;
-    height: 220px;
+    height: 300px;
 
     img {
       width: 100%;
@@ -34,12 +34,12 @@ export default {
   }
 
   h4 {
-    font-size: 10px;
+    font-size: 18px;
     text-align: center;
   }
 
   p {
-    font-size: 8px;
+    font-size: 12px;
     text-align: center;
   }
 }

@@ -14,6 +14,7 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper {
+  min-height: calc(100vh - 60px);
   background-color: orange;
   padding-top: 50px;
 }
